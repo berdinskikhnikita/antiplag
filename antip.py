@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from ant import Ui_MainWindow
+from anti import Ui_MainWindow
 
 
 class MyWidget(QMainWindow, Ui_MainWindow):
@@ -10,11 +10,11 @@ class MyWidget(QMainWindow, Ui_MainWindow):
         self.pushButton.clicked.connect(self.run)
 
     def run(self):
-        self.text = list(filter(lambda x: x != '', self.plainTextEdit.toPlainText().split('\n')))
-        self.text2 = list(filter(lambda x: x != '', self.plainTextEdit_2.toPlainText().split('\n')))
+        self.text = list(filter(lambda x: x != '', self.plainTextEdit.toPlainText().split()))
+        self.text2 = list(filter(lambda x: x != '', self.plainTextEdit_2.toPlainText().split()))
         value = self.doubleSpinBox.value()
-        orginal = len(self.text)
-        unit = 100 / orginal
+        original = len(self.text)
+        unit = 100 / original
         count = 0
         for i in range(len(self.text)):
             try:
